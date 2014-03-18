@@ -115,5 +115,58 @@ object S99SolutionsWeek2 {
   def dropFunctional[A](n:Int, l:List[A]): List[A] =
     l.zipWithIndex filter { v => (v._2 +1) % n != 0} map { _._1 }
 
+  // P17 - my solution
+  def split(n:Int, l:List[Any]):(List[Any],List[Any]) =
+    ((l slice (0,n),l slice (n,l.length)))
 
+  // P17 - built in first web solution
+  def splitBuiltIn[A](n:Int, l:List[A]):(List[A],List[A]) =
+    l splitAt (n)
+
+  // P17 - recursive second web solution
+  def splitRecursive[A](n:Int, l:List[A]):(List[A],List[A]) = (n,l) match {
+    case (_, Nil) => (Nil, Nil)
+    case (0, list) => (Nil, list)
+    case (n, h :: tail) => {
+      val (pre, post) = splitRecursive(n - 1, tail)
+      (h :: pre, post)
+    }
+  }
+    
+  // P17 - tail recursive second web solution
+  def splitTailRecursive[A](n:Int, l:List[A]):(List[A],List[A]) = {
+	def splitTailR(curN: Int, curL:List[A], pre:List[A]): (List[A],List[A]) =  (curN, curL) match {
+	  case (_, Nil) => (Nil,Nil)
+	  case (0, list) => (pre.reverse, list)
+	  case (n, h :: tail) => splitTailR(n - 1, tail, h::pre)
+	}
+	splitTailR(n,l,Nil)
+  }
+
+  // P17 - functional third web solution
+  def splitFunctional[A](n:Int, l:List[A]):(List[A],List[A]) = {
+    (l take (n), l drop (n))
+  }
+
+  
+  // P18 - already built in
+  def slice[A](start:Int, end:Int, l:List[A]): List[A] = 
+    l slice (start,end)
+
+  // P18 - my built in functional attempt
+  def slice2[A](start:Int, end:Int, l:List[A]): List[A] = 
+    (l drop (start)) take (end - start)
+
+  // P18 - my built in functional attempt
+  def slice3[A](start:Int, end:Int, l:List[A]): List[A] = 
+    l filter (e => (((l indexOf(e)) >= start)  && ((l indexOf(e)) < end)   ))
+
+  // P18 - recursive, second web solution
+  def sliceRecursive[A](start:Int, end:Int, l:List[A]): List[A] = (start,end,l) match {
+    case (_,_,Nil)                  => Nil
+    case (_,e,_) if e <= 0          => Nil
+    case (s,e,h::tail) if s <= 0    => h :: sliceRecursive(0, e - 1, tail)
+    case (s,e,h::tail)              => sliceRecursive(s -1, e -1, tail)
+  } 
+    
 }

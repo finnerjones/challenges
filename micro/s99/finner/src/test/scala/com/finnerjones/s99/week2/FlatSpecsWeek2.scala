@@ -123,4 +123,70 @@ class FlatSpecsWeek2 extends FlatSpec with Matchers {
   }
 
   
+  // P17 - my solution
+  "split(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should 
+  "return (List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    split(3,l) should be ((List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k')))
+  }
+  
+  // P17 - built in
+  "splitBuiltIn(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should 
+  "return (List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    splitBuiltIn(3,l) should be ((List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k')))
+  }
+  
+  // P17 - recursive
+  "splitRecursive(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should 
+  "return (List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    splitRecursive(3,l) should be ((List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k')))
+  }
+  
+  // P17 - tail recursive
+  "splitTailRecursive(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should 
+  "return (List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    splitTailRecursive(3,l) should be ((List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k')))
+  }
+
+
+  // P17 - functional
+  "splitFunctional(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should 
+  "return (List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    splitFunctional(3,l) should be ((List('a', 'b', 'c'),List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k')))
+  }
+  
+  
+  // P18 - the built in function
+  "slice(3, 7, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    slice(3,7,l) should be (List('d', 'e', 'f', 'g'))
+  }
+  
+
+  // P18 - functional built in solution
+  "slice2(3, 7, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    slice2(3,7,l) should be (List('d', 'e', 'f', 'g'))
+  }
+
+  // P18 - the built in function
+  "slice3(3, 7, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    slice3(3,7,l) should be (List('d', 'e', 'f', 'g'))
+  }
+  
+  // P18 - recursive solution from web
+  "sliceFunc(3, 7, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    sliceRecursive(3,7,l) should be (List('d', 'e', 'f', 'g'))
+  }
+  
 }
