@@ -189,4 +189,47 @@ class FlatSpecsWeek2 extends FlatSpec with Matchers {
     sliceRecursive(3,7,l) should be (List('d', 'e', 'f', 'g'))
   }
   
+  // P19 - my solution 
+  "rotate(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotate(3,l) should be (List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c'))
+  }
+
+  // P19 - my solution
+  "rotate(5, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c','d', 'e'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotate(5,l) should be (List('f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c','d', 'e'))
+  }
+
+  // P19 - my solution
+  "rotate(-2, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotate(-2,l) should be (List('j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'))
+  }
+  
+
+  // P19 - my solution
+  "rotate(-4, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('h', 'i','j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotate(-4,l) should be (List('h', 'i','j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g'))
+  }
+
+  // P19 - web solution 
+  "rotateAlt(3, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotateAlt(3,l) should be (List('d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'a', 'b', 'c'))
+  }
+
+  // P19 - web solution
+  "rotateAlt(-2, List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'))" should
+  "return (List('j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'))" in {
+    val l = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    rotateAlt(-2,l) should be (List('j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'))
+  }
+  
 }

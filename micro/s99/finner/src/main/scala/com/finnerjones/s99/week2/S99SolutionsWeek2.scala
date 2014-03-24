@@ -169,4 +169,18 @@ object S99SolutionsWeek2 {
     case (s,e,h::tail)              => sliceRecursive(s -1, e -1, tail)
   } 
     
+  // P19 -  my solution
+  def rotate[A](pos:Int, l:List[A]):List[A] = (pos,l) match {
+    case (_,Nil) => Nil
+    case (0,_) => l
+    case (p, h::tail) => if (p > 0 ) rotate(p-1,tail:::List(h)) else rotate(p+1, List(tail last):::l init) 
+  }
+    
+  // P19 - the web page solution
+  def rotateAlt[A](n:Int, ls:List[A]): List[A] = {
+    val nBounded = if (ls.isEmpty) 0 else n % ls.length
+    if (nBounded < 0) rotate(nBounded + ls.length,ls)
+    else (ls drop nBounded):::(ls take nBounded)
+  }
+  
 }
