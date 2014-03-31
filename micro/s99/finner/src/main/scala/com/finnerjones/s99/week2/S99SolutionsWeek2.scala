@@ -183,4 +183,9 @@ object S99SolutionsWeek2 {
     else (ls drop nBounded):::(ls take nBounded)
   }
   
+  
+  // P20
+  def removeAt[A](n:Int, l:List[A]):(List[A], A) =
+    (l filter (_ != l(n)), l(n))
+  
 }

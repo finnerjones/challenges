@@ -232,4 +232,13 @@ class FlatSpecsWeek2 extends FlatSpec with Matchers {
     rotateAlt(-2,l) should be (List('j', 'k', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'))
   }
   
+  
+  // P20
+  "removeAt(1, List('a', 'b', 'c', 'd'))" should
+  "return (List('a', 'c', 'd'),'b')" in {
+    val l = List('a', 'b', 'c', 'd')
+    removeAt(1,l) should be (List('a', 'c', 'd'),'b')
+  }
+  
+  
 }
