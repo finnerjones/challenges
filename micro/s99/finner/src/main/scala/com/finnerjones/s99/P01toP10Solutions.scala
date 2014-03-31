@@ -5,7 +5,7 @@ package com.finnerjones.s99
  * http://aperiodic.net/phil/scala/s-99/ 
  */
 
-object ListUtils {
+object P01toP10Solutions {
 
   // P01 on S99
   def last(ls:List[Any]):Any = 

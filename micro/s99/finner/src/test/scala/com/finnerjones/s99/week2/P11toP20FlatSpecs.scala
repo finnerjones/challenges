@@ -3,7 +3,7 @@ package com.finnerjones.s99.week2
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
 
-import com.finnerjones.s99.week2.S99SolutionsWeek2._
+import com.finnerjones.s99.week2.P11toP20Solutions._
 
 /*
  * Taken from S-99 problems
@@ -233,11 +233,25 @@ class FlatSpecsWeek2 extends FlatSpec with Matchers {
   }
   
   
-  // P20
+  // P20 - my solution
   "removeAt(1, List('a', 'b', 'c', 'd'))" should
   "return (List('a', 'c', 'd'),'b')" in {
     val l = List('a', 'b', 'c', 'd')
     removeAt(1,l) should be (List('a', 'c', 'd'),'b')
+  }
+  
+  // P20 - web solution1
+  "removeAtV2(1, List('a', 'b', 'c', 'd'))" should
+  "return (List('a', 'c', 'd'),'b')" in {
+    val l = List('a', 'b', 'c', 'd')
+    removeAtV2(1,l) should be (List('a', 'c', 'd'),'b')
+  }
+  
+  // P20 - web solution1
+  "removeAtV3(1, List('a', 'b', 'c', 'd'))" should
+  "return (List('a', 'c', 'd'),'b')" in {
+    val l = List('a', 'b', 'c', 'd')
+    removeAtV3(1,l) should be (List('a', 'c', 'd'),'b')
   }
   
   

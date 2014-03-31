@@ -2,14 +2,14 @@ package com.finnerjones.s99
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
-import com.finnerjones.s99.ListUtils._
+import com.finnerjones.s99.P01toP10Solutions._
 
 /*
  * The S-99 scala katas are here:
  * http://aperiodic.net/phil/scala/s-99/
  * 
  */
-class SomeListFlatSpecs extends FlatSpec with Matchers {
+class P01toP10FlatSpecs extends FlatSpec with Matchers {
 
   // P01 on S99
 

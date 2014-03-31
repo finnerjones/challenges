@@ -1,12 +1,12 @@
 package com.finnerjones.s99.week2
 
-import com.finnerjones.s99.ListUtils._
+import com.finnerjones.s99.P01toP10Solutions._
 
 /*
  * taken from S-99 website
  * http://aperiodic.net/phil/scala/s-99/
  */
-object S99SolutionsWeek2 {
+object P11toP20Solutions {
 
   // P11 - my own solution, using pack(l) !!!
   def packModified(l:List[Any]):List[Any] = 
@@ -184,8 +184,30 @@ object S99SolutionsWeek2 {
   }
   
   
-  // P20
+  // P20 - my solution
   def removeAt[A](n:Int, l:List[A]):(List[A], A) =
     (l filter (_ != l(n)), l(n))
   
+
+  // P20 - web solution 1
+  def removeAtV2[A](n:Int, l:List[A]):(List[A], A) = l splitAt(n) match {
+    case (Nil, _) if n < 0 => throw new NoSuchElementException
+    case (pre , e::post) => (pre ::: post, e)
+    case (pre, Nil) => throw new NoSuchElementException
+  }
+   
+  
+  // P20 - web solution 2
+  def removeAtV3[A](n:Int, l:List[A]):(List[A], A) = 
+    if (n < 0) throw new NoSuchElementException
+    else (n, l) match {
+      case (_, Nil) => throw new NoSuchElementException
+      case (0, h::tail) => (tail, h)
+      case (_, h::tail) => {
+        val (t,e) = removeAtV3(n - 1, l.tail)
+        (l.head :: t, e)
+      }
+    }
+      
+
 }
