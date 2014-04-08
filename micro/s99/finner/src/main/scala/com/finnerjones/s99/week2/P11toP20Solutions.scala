@@ -1,6 +1,6 @@
 package com.finnerjones.s99.week2
 
-import com.finnerjones.s99.P01toP10Solutions._
+import com.finnerjones.s99.week1.P01toP10Solutions._
 
 /*
  * taken from S-99 website
